@@ -11,7 +11,7 @@
 		margin-bottom: 20px;
 	}
 	#avatar {
-		border-radius: 50px;
+		border-radius: 50%;
 	}
 	.name {
 		margin-left: 20px;
@@ -23,14 +23,18 @@
 	#new-employee {
 		display: none;
 	}
+	.designation {
+		color: grey;
+	}
 	</style>
 </head>
 <body>
-	<h1>L</h1>
+	<h1>LaunchYard</h1>
 	<form class="ui-filterable">
 	  <input id="myFilter" data-type="search">
 	</form>
 	<div id="new-employee">
+		<p>New Employee?</p>
 		<label>Name</label><input id="new-name">
 		<label>Designation</label><input id="new-designation">
 		<button id="add-new">Add</button>

@@ -17,8 +17,9 @@ var getData = function(file, name, post) {
 	  });		
 	  var items = [];
 	  $.each( data, function( key, val ) {
-	    items.push( "<li class='item' id='" + key + "'>" + "<img id='avatar' src=" + val.avatar + ">" + "<h3 class='name'>" + val.name + "</h3>" +  "<p>" + val.designation + "</p>" + "</li>" );
+	    items.push( "<li class='item' id='" + key + "'>" + "<img id='avatar' src=" + val.avatar + ">" + "<h3 class='name'>" + val.name + "</h3>" +  "<p class='designation'>" + val.designation + "</p>" + "</li>" );
 	  });
+	  $(".my-new-list").empty();
 	  $( "<ul/>", {
 	    "class": "my-new-list",
 	    html: items.join( "" )
@@ -61,8 +62,8 @@ $( document ).ready(function() {
     $("#add-new").on("click", function() {
     	var newName = $("#new-name")[0].value;
     	var newDesignation = $("#new-designation")[0].value;
-    	$("#new-name")[0].value = "";
-		$("#new-designation")[0].value = "";
+    	$("#new-name")[0].value = null;
+		$("#new-designation")[0].value = null;
     	console.log(newName, newDesignation);
     	getData("data.json", newName, newDesignation)
     })
